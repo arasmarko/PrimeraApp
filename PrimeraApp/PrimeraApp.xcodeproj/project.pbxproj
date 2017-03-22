@@ -11,13 +11,17 @@
 		838C0545D474A48CA234E15C /* Pods_PrimeraAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC61DE1385E896CEACBC4E9 /* Pods_PrimeraAppUITests.framework */; };
 		B00F7C323FAC8566A1F3505A /* Pods_PrimeraApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02D56D5F814FAA9800DBE88 /* Pods_PrimeraApp.framework */; };
 		FB3C71841E82EEB100993E87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71831E82EEB100993E87 /* AppDelegate.swift */; };
-		FB3C71861E82EEB100993E87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71851E82EEB100993E87 /* ViewController.swift */; };
+		FB3C71861E82EEB100993E87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71851E82EEB100993E87 /* HomeViewController.swift */; };
 		FB3C71891E82EEB100993E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3C71871E82EEB100993E87 /* Main.storyboard */; };
 		FB3C718C1E82EEB100993E87 /* PrimeraApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB3C718A1E82EEB100993E87 /* PrimeraApp.xcdatamodeld */; };
 		FB3C718E1E82EEB100993E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3C718D1E82EEB100993E87 /* Assets.xcassets */; };
 		FB3C71911E82EEB100993E87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3C718F1E82EEB100993E87 /* LaunchScreen.storyboard */; };
 		FB3C719C1E82EEB100993E87 /* PrimeraAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C719B1E82EEB100993E87 /* PrimeraAppTests.swift */; };
 		FB3C71A71E82EEB100993E87 /* PrimeraAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71A61E82EEB100993E87 /* PrimeraAppUITests.swift */; };
+		FB3C71BF1E82F15300993E87 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71BE1E82F15300993E87 /* Wireframe.swift */; };
+		FBDC13701E82F245006EA900 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDC136F1E82F245006EA900 /* Default-568h@2x.png */; };
+		FBDC13731E82F4BB006EA900 /* PrimeraAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC13721E82F4BB006EA900 /* PrimeraAPI.swift */; };
+		FBDC13751E82F642006EA900 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC13741E82F642006EA900 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +53,7 @@
 		DEC61DE1385E896CEACBC4E9 /* Pods_PrimeraAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3C71801E82EEB100993E87 /* PrimeraApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3C71831E82EEB100993E87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB3C71851E82EEB100993E87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB3C71851E82EEB100993E87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB3C71881E82EEB100993E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB3C718B1E82EEB100993E87 /* PrimeraApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrimeraApp.xcdatamodel; sourceTree = "<group>"; };
 		FB3C718D1E82EEB100993E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +65,10 @@
 		FB3C71A21E82EEB100993E87 /* PrimeraAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimeraAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3C71A61E82EEB100993E87 /* PrimeraAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeraAppUITests.swift; sourceTree = "<group>"; };
 		FB3C71A81E82EEB100993E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB3C71BE1E82F15300993E87 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		FBDC136F1E82F245006EA900 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FBDC13721E82F4BB006EA900 /* PrimeraAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeraAPI.swift; sourceTree = "<group>"; };
+		FBDC13741E82F642006EA900 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 		FB3C71771E82EEB000993E87 = {
 			isa = PBXGroup;
 			children = (
+				FBDC136F1E82F245006EA900 /* Default-568h@2x.png */,
 				FB3C71821E82EEB100993E87 /* PrimeraApp */,
 				FB3C719A1E82EEB100993E87 /* PrimeraAppTests */,
 				FB3C71A51E82EEB100993E87 /* PrimeraAppUITests */,
@@ -139,6 +148,11 @@
 		FB3C71821E82EEB100993E87 /* PrimeraApp */ = {
 			isa = PBXGroup;
 			children = (
+				FB3C71921E82EEB100993E87 /* Info.plist */,
+				FB3C71B91E82F10200993E87 /* Library */,
+				FB3C71B81E82F08600993E87 /* ViewModels */,
+				FB3C71B71E82F08100993E87 /* Views */,
+				FB3C71B61E82F06F00993E87 /* Models */,
 				FB3C71B41E82EEBF00993E87 /* Application */,
 			);
 			path = PrimeraApp;
@@ -166,14 +180,52 @@
 			isa = PBXGroup;
 			children = (
 				FB3C71831E82EEB100993E87 /* AppDelegate.swift */,
-				FB3C71851E82EEB100993E87 /* ViewController.swift */,
 				FB3C71871E82EEB100993E87 /* Main.storyboard */,
 				FB3C718D1E82EEB100993E87 /* Assets.xcassets */,
 				FB3C718F1E82EEB100993E87 /* LaunchScreen.storyboard */,
-				FB3C71921E82EEB100993E87 /* Info.plist */,
 				FB3C718A1E82EEB100993E87 /* PrimeraApp.xcdatamodeld */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		FB3C71B61E82F06F00993E87 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB3C71B71E82F08100993E87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB3C71851E82EEB100993E87 /* HomeViewController.swift */,
+				FB3C71BE1E82F15300993E87 /* Wireframe.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FB3C71B81E82F08600993E87 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FBDC13741E82F642006EA900 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FB3C71B91E82F10200993E87 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FBDC13711E82F42A006EA900 /* Networking */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		FBDC13711E82F42A006EA900 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FBDC13721E82F4BB006EA900 /* PrimeraAPI.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB3C71911E82EEB100993E87 /* LaunchScreen.storyboard in Resources */,
+				FBDC13701E82F245006EA900 /* Default-568h@2x.png in Resources */,
 				FB3C718E1E82EEB100993E87 /* Assets.xcassets in Resources */,
 				FB3C71891E82EEB100993E87 /* Main.storyboard in Resources */,
 			);
@@ -460,9 +513,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3C71BF1E82F15300993E87 /* Wireframe.swift in Sources */,
+				FBDC13751E82F642006EA900 /* HomeViewModel.swift in Sources */,
 				FB3C718C1E82EEB100993E87 /* PrimeraApp.xcdatamodeld in Sources */,
-				FB3C71861E82EEB100993E87 /* ViewController.swift in Sources */,
+				FB3C71861E82EEB100993E87 /* HomeViewController.swift in Sources */,
 				FB3C71841E82EEB100993E87 /* AppDelegate.swift in Sources */,
+				FBDC13731E82F4BB006EA900 /* PrimeraAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +775,7 @@
 				FB3C71AD1E82EEB100993E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB3C71AE1E82EEB100993E87 /* Build configuration list for PBXNativeTarget "PrimeraAppTests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +784,7 @@
 				FB3C71B01E82EEB100993E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB3C71B11E82EEB100993E87 /* Build configuration list for PBXNativeTarget "PrimeraAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -735,6 +793,7 @@
 				FB3C71B31E82EEB100993E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
