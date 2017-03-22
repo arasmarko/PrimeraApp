@@ -1,0 +1,96 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
+  - Alamofire (4.4.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FacebookCore (0.2.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.15)
+  - FacebookLogin (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKLoginKit (~> 4.15)
+  - FacebookShare (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKShareKit (~> 4.15)
+  - FBSDKCoreKit (4.20.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.20.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.20.0):
+    - FBSDKCoreKit
+  - KeychainSwift (7.0.0)
+  - Kingfisher (3.5.1)
+  - Moya/Core (8.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (8.0.2):
+    - Moya/Core
+    - RxSwift (~> 3.0)
+  - PureLayout (3.0.2)
+  - Result (3.2.0)
+  - RxCocoa (3.2.0):
+    - RxSwift (~> 3.1)
+  - RxDataSources (1.0.3):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxGesture (1.0.0):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxKeyboard (0.4.1):
+    - RxCocoa (>= 3.0)
+    - RxSwift (>= 3.0)
+  - RxSwift (3.2.0)
+  - SwiftDate (4.0.13)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0 (~> 2.2.0)
+  - FacebookCore
+  - FacebookLogin
+  - FacebookShare
+  - KeychainSwift (~> 7.0)
+  - Kingfisher
+  - Moya/RxSwift
+  - PureLayout
+  - RxCocoa (~> 3.0)
+  - RxDataSources (~> 1.0)
+  - RxGesture
+  - RxKeyboard (~> 0.4)
+  - RxSwift (~> 3.0)
+  - SwiftDate (~> 4.0)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
+  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
+  FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
+  FBSDKCoreKit: 2d16979b28fe28c2b95af0d275ad5f9703c6c8de
+  FBSDKLoginKit: a9d9391506c687e2304a590bf9312837fce7f375
+  FBSDKShareKit: 1b91af62a603d67f392bc7fde63bc4a0705dde31
+  KeychainSwift: b6947435dd78cc442c64a84ae648dd0e871cf448
+  Kingfisher: 12eeffeef42ea45b68c5e5acfe8ba9005b713ab4
+  Moya: 47f61da5b634aa71f676431b64ee0f81e976296d
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Result: 5a6705171c0613cc5fbf6ec55ff520cc62a8e81d
+  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
+  RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
+  RxGesture: df17ca8be513640294c544b3165875e91de665ec
+  RxKeyboard: 4046ecd1884a3bf0dacb823bd2ac8b00482d29ff
+  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 86abe32de7890d5020e0c041fb4bfacd8bba0dff
+
+COCOAPODS: 1.2.0

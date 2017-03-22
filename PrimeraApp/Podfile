@@ -1,0 +1,40 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'PrimeraApp' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+    # Pods for PrimeraApp
+    pod 'PureLayout'
+    pod 'RxSwift', '~> 3.0'
+    pod 'RxCocoa', '~> 3.0'
+    #  pod 'Moya'
+    pod 'Moya/RxSwift'
+    pod 'KeychainSwift', '~> 7.0'
+    pod 'SwiftyJSON'
+    pod 'SwiftDate', '~> 4.0'
+    
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
+    
+    pod 'RxDataSources', '~> 1.0'
+    pod 'ActionSheetPicker-3.0', '~> 2.2.0'
+    pod 'RxKeyboard', '~> 0.4'
+    pod 'RxGesture'
+    
+    pod 'Kingfisher'
+
+
+  target 'PrimeraAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'PrimeraAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
