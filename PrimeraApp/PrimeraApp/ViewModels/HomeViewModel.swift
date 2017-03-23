@@ -15,20 +15,34 @@ class HomeViewModel {
     let provider = RxMoyaProvider<PrimeraAPI>()
     
     
-    let x: Observable<Bool>
+    let league: Observable<League>
+    let teams: Observable<[Team]>
     
     init() {
         
-        x = provider.request(.primera)
+        league = provider.request(.primera)
             .filterSuccessfulStatusAndRedirectCodes()
             .debug()
             .mapJSON()
-            .flatMapLatest({ resposnse -> Observable<Bool> in
+            .flatMapLatest({ resposnse -> Observable<League> in
                 
                 let json = JSON(resposnse)
-                print(json)
-                
-                return Observable.just(true)
+                let league = League(json: json)
+                return Observable.just(league)
+            })
+        
+        teams = provider.request(.teams)
+            .filterSuccessfulStatusAndRedirectCodes()
+            .debug()
+            .mapJSON()
+            .flatMapLatest({ resposnse -> Observable<[Team]> in
+                var teams: [Team] = []
+                let json = JSON(resposnse)
+                for (_, subJson) in json["teams"] {
+                    
+                    teams.append(Team(name: subJson["name"].stringValue))
+                }
+                return Observable.just(teams)
             })
         
     }

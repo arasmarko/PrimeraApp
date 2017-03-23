@@ -19,7 +19,8 @@
 		FB3C719C1E82EEB100993E87 /* PrimeraAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C719B1E82EEB100993E87 /* PrimeraAppTests.swift */; };
 		FB3C71A71E82EEB100993E87 /* PrimeraAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71A61E82EEB100993E87 /* PrimeraAppUITests.swift */; };
 		FB3C71BF1E82F15300993E87 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71BE1E82F15300993E87 /* Wireframe.swift */; };
-		FBDC13701E82F245006EA900 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDC136F1E82F245006EA900 /* Default-568h@2x.png */; };
+		FB68FFB41E832BA50031DA3B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB68FFB31E832BA50031DA3B /* League.swift */; };
+		FB68FFBA1E8335EF0031DA3B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB68FFB91E8335EF0031DA3B /* Team.swift */; };
 		FBDC13731E82F4BB006EA900 /* PrimeraAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC13721E82F4BB006EA900 /* PrimeraAPI.swift */; };
 		FBDC13751E82F642006EA900 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC13741E82F642006EA900 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +67,8 @@
 		FB3C71A61E82EEB100993E87 /* PrimeraAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeraAppUITests.swift; sourceTree = "<group>"; };
 		FB3C71A81E82EEB100993E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB3C71BE1E82F15300993E87 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
-		FBDC136F1E82F245006EA900 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FB68FFB31E832BA50031DA3B /* League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
+		FB68FFB91E8335EF0031DA3B /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FBDC13721E82F4BB006EA900 /* PrimeraAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeraAPI.swift; sourceTree = "<group>"; };
 		FBDC13741E82F642006EA900 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,7 +127,6 @@
 		FB3C71771E82EEB000993E87 = {
 			isa = PBXGroup;
 			children = (
-				FBDC136F1E82F245006EA900 /* Default-568h@2x.png */,
 				FB3C71821E82EEB100993E87 /* PrimeraApp */,
 				FB3C719A1E82EEB100993E87 /* PrimeraAppTests */,
 				FB3C71A51E82EEB100993E87 /* PrimeraAppUITests */,
@@ -191,6 +192,8 @@
 		FB3C71B61E82F06F00993E87 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FB68FFB31E832BA50031DA3B /* League.swift */,
+				FB68FFB91E8335EF0031DA3B /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,7 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB3C71911E82EEB100993E87 /* LaunchScreen.storyboard in Resources */,
-				FBDC13701E82F245006EA900 /* Default-568h@2x.png in Resources */,
 				FB3C718E1E82EEB100993E87 /* Assets.xcassets in Resources */,
 				FB3C71891E82EEB100993E87 /* Main.storyboard in Resources */,
 			);
@@ -513,9 +515,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB68FFB41E832BA50031DA3B /* League.swift in Sources */,
 				FB3C71BF1E82F15300993E87 /* Wireframe.swift in Sources */,
 				FBDC13751E82F642006EA900 /* HomeViewModel.swift in Sources */,
 				FB3C718C1E82EEB100993E87 /* PrimeraApp.xcdatamodeld in Sources */,
+				FB68FFBA1E8335EF0031DA3B /* Team.swift in Sources */,
 				FB3C71861E82EEB100993E87 /* HomeViewController.swift in Sources */,
 				FB3C71841E82EEB100993E87 /* AppDelegate.swift in Sources */,
 				FBDC13731E82F4BB006EA900 /* PrimeraAPI.swift in Sources */,
