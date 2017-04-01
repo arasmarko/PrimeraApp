@@ -22,7 +22,7 @@ class TeamTableViewCell: UITableViewCell {
         
         self.addSubview(nameLabel)
         nameLabel.autoPinEdgesToSuperviewEdges()
-        nameLabel.text = "Marko"
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,6 +43,12 @@ class TeamTableViewCell: UITableViewCell {
     func setupView(team: Team) {
         let imgUrl = team.crestUrl
         //ne rodi
+        
+        nameLabel.text = team.name
+        teamBackgroundImageView.image = UIImage(named: "intro")
+        teamBackgroundImageView.contentMode = .scaleAspectFill
+        //teamBackgroundImageView.transform = teamBackgroundImageView.transform.rotated(by: 30)
+        teamBackgroundImageView.clipsToBounds = true
         
         //print(imgUrl)
 //        let url = URL(string: imgUrl)
@@ -69,8 +75,8 @@ class TeamTableViewCell: UITableViewCell {
 //        task.resume()
 
         
-        let url = URL(string: team.crestUrl)
-        teamBackgroundImageView.kf.setImage(with: url)
+//        let url = URL(string: team.crestUrl)
+//        teamBackgroundImageView.kf.setImage(with: url)
     }
     
 }
