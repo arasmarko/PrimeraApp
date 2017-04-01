@@ -22,7 +22,6 @@ class HomeViewModel {
         
         league = provider.request(.primera)
             .filterSuccessfulStatusAndRedirectCodes()
-            .debug()
             .mapJSON()
             .flatMapLatest({ resposnse -> Observable<League> in
                 
@@ -33,14 +32,13 @@ class HomeViewModel {
         
         teams = provider.request(.teams)
             .filterSuccessfulStatusAndRedirectCodes()
-            .debug()
             .mapJSON()
             .flatMapLatest({ resposnse -> Observable<[Team]> in
                 var teams: [Team] = []
                 let json = JSON(resposnse)
                 for (_, subJson) in json["teams"] {
                     
-                    teams.append(Team(name: subJson["name"].stringValue))
+                    teams.append(Team(json: subJson))
                 }
                 return Observable.just(teams)
             })

@@ -7,12 +7,20 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Team {
     let name: String
+    let shortName: String
+    let crestUrl: String
+    let squadMarketValue: String
     
-    init(name: String) {
-        self.name = name
+    init(json: JSON) {
+        self.name = json["name"].stringValue
+        self.shortName = json["shortName"].stringValue
+        self.crestUrl = json["crestUrl"].stringValue
+        self.squadMarketValue = json["squadMarketValue"].stringValue
+        
     }
     
 }

@@ -28,10 +28,18 @@ class HomeViewController: UIViewController {
     let homeVM = HomeViewModel()
     let tableView = UITableView()
     
+    let cellReuseIdentifier = "TeamCell"
+    
     let dataSource = RxTableViewSectionedReloadDataSource<SectionOfTeams>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.rowHeight = 220.0
+        tableView.estimatedRowHeight = 220.0
+        tableView.separatorStyle = .none
+
         
         render()
         
@@ -41,8 +49,37 @@ class HomeViewController: UIViewController {
 //            guard let `self` = self else {
 //                return UITableViewCell()
 //            }
-            let cell = UITableViewCell()//tv.dequeueReusableCell(withIdentifier: "Cell", for: ip)
-            cell.textLabel?.text = "Item: \(team.name)"
+            let cell = tv.dequeueReusableCell(withIdentifier: self.cellReuseIdentifier, for: ip) as! TeamTableViewCell
+            cell.textLabel?.text = team.name
+            
+//            cell.setupView(team: team)
+            
+//            cell.teamBackgroundImageView.image =
+            
+//            cell.teamBackgroundImageView.
+            
+//            let imgUrl = team.crestUrl
+//            
+//            if let url: URL = URL(string: imgUrl) {
+//                let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+//                    if data != nil {
+//                        print("mogu ", team.crestUrl)
+//                        DispatchQueue.main.async(execute: { () -> Void in
+//                            print(data)
+//                            cell.teamBackgroundImageView.image = UIImage(data: data!)
+//                        })
+//                    }
+//                })
+//                task.resume()
+//
+//            } else {
+//                print("ne mogu ", team.crestUrl)
+//            }
+            
+            
+            
+            cell.selectionStyle = .none
+            cell.setupView(team: team)
             return cell
         }
         
