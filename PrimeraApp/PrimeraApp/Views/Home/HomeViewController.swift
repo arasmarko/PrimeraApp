@@ -52,30 +52,7 @@ class HomeViewController: UIViewController {
             let cell = tv.dequeueReusableCell(withIdentifier: self.cellReuseIdentifier, for: ip) as! TeamTableViewCell
             cell.textLabel?.text = team.name
             
-//            cell.setupView(team: team)
-            
-//            cell.teamBackgroundImageView.image =
-            
-//            cell.teamBackgroundImageView.
-            
-//            let imgUrl = team.crestUrl
-//            
-//            if let url: URL = URL(string: imgUrl) {
-//                let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-//                    if data != nil {
-//                        print("mogu ", team.crestUrl)
-//                        DispatchQueue.main.async(execute: { () -> Void in
-//                            print(data)
-//                            cell.teamBackgroundImageView.image = UIImage(data: data!)
-//                        })
-//                    }
-//                })
-//                task.resume()
-//
-//            } else {
-//                print("ne mogu ", team.crestUrl)
-//            }
-            
+            //cell.setupView(team: team)
             
             
             cell.selectionStyle = .none

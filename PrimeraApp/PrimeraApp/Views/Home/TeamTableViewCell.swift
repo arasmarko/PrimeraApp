@@ -43,6 +43,15 @@ class TeamTableViewCell: UITableViewCell {
     func setupView(team: Team) {
         let imgUrl = team.crestUrl
         //ne rodi
+        
+        //print(imgUrl)
+//        let url = URL(string: imgUrl)
+        
+        //let data = try? Data(contentsOf: url!)
+        //if ()
+        //teamBackgroundImageView.image = UIImage(data: data!)
+        
+
 //        let escapedString = imgUrl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
 //        let url: URL = URL(string: "www.w3schools.com/css/trolltunga.jpg")!
         
