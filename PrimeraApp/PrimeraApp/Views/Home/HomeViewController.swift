@@ -11,6 +11,7 @@ import PureLayout
 import RxSwift
 import RxCocoa
 import RxDataSources
+import SVGKit
 
 struct SectionOfTeams {
     var items: [Team]
@@ -50,10 +51,6 @@ class HomeViewController: UIViewController {
 //                return UITableViewCell()
 //            }
             let cell = tv.dequeueReusableCell(withIdentifier: self.cellReuseIdentifier, for: ip) as! TeamTableViewCell
-            cell.textLabel?.text = team.name
-            
-            //cell.setupView(team: team)
-            
             
             cell.selectionStyle = .none
             cell.setupView(team: team)

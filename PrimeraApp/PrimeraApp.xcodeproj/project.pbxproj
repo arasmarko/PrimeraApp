@@ -20,6 +20,7 @@
 		FB3C719C1E82EEB100993E87 /* PrimeraAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C719B1E82EEB100993E87 /* PrimeraAppTests.swift */; };
 		FB3C71A71E82EEB100993E87 /* PrimeraAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71A61E82EEB100993E87 /* PrimeraAppUITests.swift */; };
 		FB3C71BF1E82F15300993E87 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71BE1E82F15300993E87 /* Wireframe.swift */; };
+		FB3F7EE51E92984E00E3E769 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3F7EE41E92984E00E3E769 /* SVGKit.framework */; };
 		FB68FFB41E832BA50031DA3B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB68FFB31E832BA50031DA3B /* League.swift */; };
 		FB68FFBA1E8335EF0031DA3B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB68FFB91E8335EF0031DA3B /* Team.swift */; };
 		FBCD0E121E846F0C0013FFAF /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCD0E101E846F0C0013FFAF /* TeamTableViewCell.swift */; };
@@ -71,6 +72,7 @@
 		FB3C71A61E82EEB100993E87 /* PrimeraAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeraAppUITests.swift; sourceTree = "<group>"; };
 		FB3C71A81E82EEB100993E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB3C71BE1E82F15300993E87 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		FB3F7EE41E92984E00E3E769 /* SVGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SVGKit.framework; sourceTree = "<group>"; };
 		FB68FFB31E832BA50031DA3B /* League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		FB68FFB91E8335EF0031DA3B /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FBCD0E101E846F0C0013FFAF /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3F7EE51E92984E00E3E769 /* SVGKit.framework in Frameworks */,
 				B00F7C323FAC8566A1F3505A /* Pods_PrimeraApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +113,7 @@
 		A0053032343618F60EA620F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB3F7EE41E92984E00E3E769 /* SVGKit.framework */,
 				C02D56D5F814FAA9800DBE88 /* Pods_PrimeraApp.framework */,
 				6D0E7E11BB0A2E768AB925A4 /* Pods_PrimeraAppTests.framework */,
 				DEC61DE1385E896CEACBC4E9 /* Pods_PrimeraAppUITests.framework */,
@@ -704,6 +708,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8V5BSN48AT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PrimeraApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hr.fer.PrimeraApp;
@@ -718,6 +726,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8V5BSN48AT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PrimeraApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hr.fer.PrimeraApp;

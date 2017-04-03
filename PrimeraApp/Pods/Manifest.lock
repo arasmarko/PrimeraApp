@@ -7,6 +7,12 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - CocoaLumberjack (3.1.0):
+    - CocoaLumberjack/Default (= 3.1.0)
+    - CocoaLumberjack/Extensions (= 3.1.0)
+  - CocoaLumberjack/Default (3.1.0)
+  - CocoaLumberjack/Extensions (3.1.0):
+    - CocoaLumberjack/Default
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -48,6 +54,8 @@ PODS:
     - RxCocoa (>= 3.0)
     - RxSwift (>= 3.0)
   - RxSwift (3.2.0)
+  - SVGKit (2.0.1):
+    - CocoaLumberjack (~> 3.x)
   - SwiftDate (4.0.13)
   - SwiftyJSON (3.1.4)
 
@@ -65,13 +73,25 @@ DEPENDENCIES:
   - RxGesture
   - RxKeyboard (~> 0.4)
   - RxSwift (~> 3.0)
+  - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `2.x`)
   - SwiftDate (~> 4.0)
   - SwiftyJSON
+
+EXTERNAL SOURCES:
+  SVGKit:
+    :branch: 2.x
+    :git: https://github.com/SVGKit/SVGKit.git
+
+CHECKOUT OPTIONS:
+  SVGKit:
+    :commit: 0d51457057e8e82751d8600b2ed2385082c1a495
+    :git: https://github.com/SVGKit/SVGKit.git
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CocoaLumberjack: 8311463ddf9ee86a06ef92a071dd656c89244500
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
@@ -88,9 +108,10 @@ SPEC CHECKSUMS:
   RxGesture: df17ca8be513640294c544b3165875e91de665ec
   RxKeyboard: 4046ecd1884a3bf0dacb823bd2ac8b00482d29ff
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  SVGKit: 4055d9e809b5db8633755979cfb3b02dc5a8c20d
   SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 86abe32de7890d5020e0c041fb4bfacd8bba0dff
+PODFILE CHECKSUM: 817b0e3d002ca6224c0a4c75f7194ec73acb8f48
 
 COCOAPODS: 1.2.0
