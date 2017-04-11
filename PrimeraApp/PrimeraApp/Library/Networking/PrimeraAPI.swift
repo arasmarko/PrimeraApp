@@ -13,6 +13,8 @@ import CoreLocation
 enum PrimeraAPI {
     case primera
     case teams
+    case team(teamUrl: String)
+    case players(playersUrl: String)
 }
 // MARK: - TargetType Protocol Implementation
 extension PrimeraAPI: TargetType {
@@ -25,17 +27,21 @@ extension PrimeraAPI: TargetType {
             return "/competitions/436"
         case .teams:
             return "/competitions/436/teams"
+        case .team(let url):
+            return url
+        case .players(let url):
+            return url
         }
     }
     var method: Moya.Method {
         switch self {
-        case .primera, .teams:
+        case .primera, .teams, .team, .players:
             return .get
         }
     }
     var parameters: [String: Any]? {
         switch self {
-        case .primera, .teams:
+        case .primera, .teams, .team, .players:
             return nil
         }
     }
@@ -50,7 +56,7 @@ extension PrimeraAPI: TargetType {
     
     var task: Task {
         switch self {
-        case .primera, .teams:
+        case .primera, .teams, .team, .players:
             return .request
         }
     }

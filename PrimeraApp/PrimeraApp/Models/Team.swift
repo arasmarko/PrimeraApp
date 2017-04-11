@@ -37,12 +37,21 @@ class Team {
     let shortName: String
     let crestUrl: String
     let squadMarketValue: String
+    let teamLink: String
+    let fixturesLink: String
+    let playersLink: String
     
     init(json: JSON) {
         self.name = json["name"].stringValue
         self.shortName = json["shortName"].stringValue
         self.crestUrl = json["crestUrl"].stringValue
         self.squadMarketValue = json["squadMarketValue"].stringValue
+        
+        self.teamLink = json["_links"]["self"]["href"].stringValue.components(separatedBy: "/v1")[1]
+        self.fixturesLink = json["_links"]["fixtures"]["href"].stringValue.components(separatedBy: "/v1")[1]
+        self.playersLink = json["_links"]["players"]["href"].stringValue.components(separatedBy: "/v1")[1]
+        
+//        print("teamLink", self.teamLink)
         
     }
     

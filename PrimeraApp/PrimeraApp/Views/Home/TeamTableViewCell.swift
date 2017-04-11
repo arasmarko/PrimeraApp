@@ -15,6 +15,7 @@ class TeamTableViewCell: UITableViewCell {
     var teamBackgroundImageView: SVGKLayeredImageView!
     let nameLabel = UILabel()
     var team: Team!
+
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -41,26 +42,39 @@ class TeamTableViewCell: UITableViewCell {
     
     func setupView(team: Team) {
         let imgUrl = team.crestUrl
-        //ne rodi
         self.team = team
         nameLabel.text = team.name
-//        teamBackgroundImageView.image = UIImage(named: "intro")
         
-        //print(imgUrl)
         if let url = URL(string: imgUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPathAllowed)!) {
             let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 if data != nil {
                     DispatchQueue.main.async(execute: { () -> Void in
                         if let im = SVGKImage(data: data) {
                             self.teamBackgroundImageView = SVGKLayeredImageView(svgkImage: im)
-                            self.insertSubview(self.teamBackgroundImageView, at: 0)
-                            self.teamBackgroundImageView.autoPinEdgesToSuperviewEdges()
-                            self.teamBackgroundImageView.backgroundColor = .white
-                            self.teamBackgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
-                            self.teamBackgroundImageView.layer.contentsRect = CGRect(x: 0, y: 0, width: 50, height: 50)
+                            
+                            self.addSubview(self.teamBackgroundImageView)
+                            self.teamBackgroundImageView.transform = CGAffineTransform(scaleX: self.bounds.width/self.teamBackgroundImageView.bounds.width*0.7, y: self.bounds.height/self.teamBackgroundImageView.bounds.height*1.3)
+                            print("marko1", self.teamBackgroundImageView.bounds.width, self.teamBackgroundImageView.bounds.height)
+                            self.teamBackgroundImageView.autoPinEdge(toSuperviewEdge: .right)
+                            self.teamBackgroundImageView.autoPinEdge(toSuperviewEdge: .top)
+                            self.teamBackgroundImageView.autoPinEdge(toSuperviewEdge: .bottom)
+//                            self.backgroundColor = .red
+                            self.teamBackgroundImageView.autoSetDimension(.width, toSize: 280)
+//                            self.teamBackgroundImageView.backgroundColor = .white
+//                            self.teamBackgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
+//                            self.teamBackgroundImageView.layer.contentsRect = CGRect(x: 0, y: 0, width: 50, height: 50)
 //                            self.teamBackgroundImageView.transform = CGAffineTransform.identity.rotated(by: 5.6)
 //                            self.teamBackgroundImageView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
                             self.teamBackgroundImageView.clipsToBounds = true
+                            
+//                            let imageView = UIImageView(image: self.pb_takeSnapshot())
+//                            self.addSubview(imageView)
+//                            imageView.autoPinEdgesToSuperviewEdges()
+////                            imageView.backgroundColor = .white
+//                            imageView.contentMode = .scaleAspectFit
+//                            self.teamBackgroundImageView.removeFromSuperview()
+                            
+                            
 
                         } else {
                             let imageView = UIImageView(image: UIImage(data: data!))
@@ -80,29 +94,20 @@ class TeamTableViewCell: UITableViewCell {
             task.resume()
         }
         
-        //let data = try? Data(contentsOf: url!)
-        //if ()
-        //teamBackgroundImageView.image = UIImage(data: data!)
-        
-
-//        let escapedString = imgUrl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
-//        let url: URL = URL(string: "www.w3schools.com/css/trolltunga.jpg")!
-        
-//        print("govno: ", escapedString)
-        
-//        teamBackgroundImageView.downloadImage(URL(string: escapedString!)!, placeholderImage: nil)
-        
-        
-        
-        
-
-        
-//        let url = URL(string: team.crestUrl)
-//        teamBackgroundImageView.kf.setImage(with: url)
     }
     
     override func prepareForReuse() {
         self.subviews.forEach({ $0.removeFromSuperview() })
+    }
+    
+    func pb_takeSnapshot() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, 0)
+        
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
     }
     
 }
