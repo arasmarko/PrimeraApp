@@ -10,6 +10,10 @@
 		25F8EC75AD9E0969C02CA9AC /* Pods_PrimeraAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0E7E11BB0A2E768AB925A4 /* Pods_PrimeraAppTests.framework */; };
 		838C0545D474A48CA234E15C /* Pods_PrimeraAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC61DE1385E896CEACBC4E9 /* Pods_PrimeraAppUITests.framework */; };
 		B00F7C323FAC8566A1F3505A /* Pods_PrimeraApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02D56D5F814FAA9800DBE88 /* Pods_PrimeraApp.framework */; };
+		FB1C3EFE1EA4EB960022153A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C3EFD1EA4EB960022153A /* TabBarViewController.swift */; };
+		FB1C3F011EA4EC610022153A /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C3F001EA4EC610022153A /* StandingsViewController.swift */; };
+		FB1C3F031EA4EF360022153A /* PrimeraProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C3F021EA4EF360022153A /* PrimeraProvider.swift */; };
+		FB1C3F051EA4F2B00022153A /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C3F041EA4F2B00022153A /* StandingsViewModel.swift */; };
 		FB1D191C1E8C142A00761CA9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1D191B1E8C142A00761CA9 /* UIImageView+Extension.swift */; };
 		FB3C71841E82EEB100993E87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71831E82EEB100993E87 /* AppDelegate.swift */; };
 		FB3C71861E82EEB100993E87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71851E82EEB100993E87 /* HomeViewController.swift */; };
@@ -21,6 +25,7 @@
 		FB3C71A71E82EEB100993E87 /* PrimeraAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71A61E82EEB100993E87 /* PrimeraAppUITests.swift */; };
 		FB3C71BF1E82F15300993E87 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C71BE1E82F15300993E87 /* Wireframe.swift */; };
 		FB3F7EE51E92984E00E3E769 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3F7EE41E92984E00E3E769 /* SVGKit.framework */; };
+		FB4D4E0F1EA4F94500BCE91B /* StandingTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D4E0E1EA4F94500BCE91B /* StandingTeamTableViewCell.swift */; };
 		FB68FFB41E832BA50031DA3B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB68FFB31E832BA50031DA3B /* League.swift */; };
 		FB68FFBA1E8335EF0031DA3B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB68FFB91E8335EF0031DA3B /* Team.swift */; };
 		FBA1567F1E9CE7F3001E634F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA1567E1E9CE7F3001E634F /* Player.swift */; };
@@ -59,6 +64,10 @@
 		BC2E800F3C9D31F44CB8C741 /* Pods-PrimeraApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeraApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimeraApp/Pods-PrimeraApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C02D56D5F814FAA9800DBE88 /* Pods_PrimeraApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC61DE1385E896CEACBC4E9 /* Pods_PrimeraAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB1C3EFD1EA4EB960022153A /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		FB1C3F001EA4EC610022153A /* StandingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
+		FB1C3F021EA4EF360022153A /* PrimeraProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeraProvider.swift; sourceTree = "<group>"; };
+		FB1C3F041EA4F2B00022153A /* StandingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
 		FB1D191B1E8C142A00761CA9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		FB3C71801E82EEB100993E87 /* PrimeraApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3C71831E82EEB100993E87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +85,7 @@
 		FB3C71A81E82EEB100993E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB3C71BE1E82F15300993E87 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		FB3F7EE41E92984E00E3E769 /* SVGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SVGKit.framework; sourceTree = "<group>"; };
+		FB4D4E0E1EA4F94500BCE91B /* StandingTeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingTeamTableViewCell.swift; sourceTree = "<group>"; };
 		FB68FFB31E832BA50031DA3B /* League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		FB68FFB91E8335EF0031DA3B /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FBA1567E1E9CE7F3001E634F /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -138,6 +148,15 @@
 				52C968F4C7AACDEC92BF86DE /* Pods-PrimeraAppUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB1C3EFF1EA4EC350022153A /* Standings */ = {
+			isa = PBXGroup;
+			children = (
+				FB1C3F001EA4EC610022153A /* StandingsViewController.swift */,
+				FB4D4E0E1EA4F94500BCE91B /* StandingTeamTableViewCell.swift */,
+			);
+			path = Standings;
 			sourceTree = "<group>";
 		};
 		FB3C71771E82EEB000993E87 = {
@@ -218,9 +237,11 @@
 		FB3C71B71E82F08100993E87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FB1C3EFF1EA4EC350022153A /* Standings */,
 				FBCE61F51E9CE1FE00A1149B /* Team */,
 				FB3C71BE1E82F15300993E87 /* Wireframe.swift */,
 				FBCD0E141E846F130013FFAF /* Home */,
+				FB1C3EFD1EA4EB960022153A /* TabBarViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +251,7 @@
 			children = (
 				FBDC13741E82F642006EA900 /* HomeViewModel.swift */,
 				FBCE61F81E9CE25A00A1149B /* TeamViewModel.swift */,
+				FB1C3F041EA4F2B00022153A /* StandingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -273,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				FBDC13721E82F4BB006EA900 /* PrimeraAPI.swift */,
+				FB1C3F021EA4EF360022153A /* PrimeraProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -566,15 +589,20 @@
 				FB68FFB41E832BA50031DA3B /* League.swift in Sources */,
 				FB3C71BF1E82F15300993E87 /* Wireframe.swift in Sources */,
 				FBDC13751E82F642006EA900 /* HomeViewModel.swift in Sources */,
+				FB1C3EFE1EA4EB960022153A /* TabBarViewController.swift in Sources */,
 				FB3C718C1E82EEB100993E87 /* PrimeraApp.xcdatamodeld in Sources */,
 				FBA1567F1E9CE7F3001E634F /* Player.swift in Sources */,
 				FBCE61F91E9CE25A00A1149B /* TeamViewModel.swift in Sources */,
+				FB1C3F051EA4F2B00022153A /* StandingsViewModel.swift in Sources */,
 				FB68FFBA1E8335EF0031DA3B /* Team.swift in Sources */,
 				FB3C71861E82EEB100993E87 /* HomeViewController.swift in Sources */,
 				FB3C71841E82EEB100993E87 /* AppDelegate.swift in Sources */,
+				FB4D4E0F1EA4F94500BCE91B /* StandingTeamTableViewCell.swift in Sources */,
+				FB1C3F031EA4EF360022153A /* PrimeraProvider.swift in Sources */,
 				FBCD0E121E846F0C0013FFAF /* TeamTableViewCell.swift in Sources */,
 				FBCE61F71E9CE22000A1149B /* TeamViewController.swift in Sources */,
 				FBDC13731E82F4BB006EA900 /* PrimeraAPI.swift in Sources */,
+				FB1C3F011EA4EC610022153A /* StandingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

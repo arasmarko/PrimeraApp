@@ -16,7 +16,7 @@ class Wireframe {
     
     func start(window: UIWindow) {
         self.window = window
-        window.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        window.rootViewController = TabBarViewController()//UINavigationController(rootViewController: HomeViewController())
         
     }
     

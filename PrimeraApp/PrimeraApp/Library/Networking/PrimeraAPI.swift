@@ -4,15 +4,17 @@
 //
 //  Created by Marko Aras on 22/03/2017.
 //  Copyright © 2017 fer. All rights reserved.
-//
+//  X-Auth-Token: 903a40fb1e37410b8ea57c02f454584a
 
 import Foundation
 import Moya
 import CoreLocation
 
+
 enum PrimeraAPI {
     case primera
     case teams
+    case table
     case team(teamUrl: String)
     case players(playersUrl: String)
 }
@@ -27,6 +29,8 @@ extension PrimeraAPI: TargetType {
             return "/competitions/436"
         case .teams:
             return "/competitions/436/teams"
+        case .table:
+            return "/competitions/436/leagueTable"
         case .team(let url):
             return url
         case .players(let url):
@@ -35,13 +39,13 @@ extension PrimeraAPI: TargetType {
     }
     var method: Moya.Method {
         switch self {
-        case .primera, .teams, .team, .players:
+        case .primera, .teams, .team, .players, .table:
             return .get
         }
     }
     var parameters: [String: Any]? {
         switch self {
-        case .primera, .teams, .team, .players:
+        case .primera, .teams, .team, .players, .table:
             return nil
         }
     }
@@ -56,7 +60,7 @@ extension PrimeraAPI: TargetType {
     
     var task: Task {
         switch self {
-        case .primera, .teams, .team, .players:
+        case .primera, .teams, .team, .players, .table:
             return .request
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 import RxSwift
-//import RxCocoa
+import RxCocoa
 import RxDataSources
 import SVGKit
 
@@ -75,7 +75,7 @@ class HomeViewController: UIViewController {
         searchField.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(64, 0, 0, 0), excludingEdge: .bottom)
         searchField.autoSetDimension(.height, toSize: 44)
         searchField.backgroundColor = .white
-        
+                
         view.addSubview(tableView)
         tableView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(), excludingEdge: .top)
         tableView.autoPinEdge(.top, to: .bottom, of: searchField)
