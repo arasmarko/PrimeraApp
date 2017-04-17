@@ -27,12 +27,17 @@ class TeamTableViewCell: UITableViewCell {
     }
 
     func setupView(team: Team) {
+        let contentView = UIView()
+        self.addSubview(contentView)
+        contentView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0))
+        
         let imgUrl = team.crestUrl
         self.team = team
         nameLabel.text = team.name
         
-        self.addSubview(nameLabel)
-        nameLabel.autoPinEdgesToSuperviewEdges()
+        contentView.addSubview(nameLabel)
+        nameLabel.autoAlignAxis(.horizontal, toSameAxisOf: contentView)
+        nameLabel.autoPinEdge(.left, to: .left, of: contentView, withOffset: 20)
 
         
         if let url = URL(string: imgUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPathAllowed)!) {
@@ -40,25 +45,25 @@ class TeamTableViewCell: UITableViewCell {
                 if data != nil {
                     DispatchQueue.main.async(execute: { () -> Void in
                         if let im = SVGKImage(data: data) {
-                            self.teamBackgroundImageView = SVGKLayeredImageView(svgkImage: im)
+//                            self.teamBackgroundImageView = SVGKLayeredImageView(svgkImage: im)
                             
-                            self.addSubview(self.teamBackgroundImageView)
-                            self.teamBackgroundImageView.transform = CGAffineTransform(scaleX: self.bounds.width/self.teamBackgroundImageView.bounds.width*0.7, y: self.bounds.height/self.teamBackgroundImageView.bounds.height*1.3)
+//                            contentView.addSubview(self.teamBackgroundImageView)
+//                            self.teamBackgroundImageView.transform = CGAffineTransform(scaleX: self.bounds.width/self.teamBackgroundImageView.bounds.width, y: self.bounds.height/self.teamBackgroundImageView.bounds.height)
 //                            print("marko1", self.teamBackgroundImageView.bounds.width, self.teamBackgroundImageView.bounds.height)
-                            self.teamBackgroundImageView.autoPinEdge(toSuperviewEdge: .right)
-                            self.teamBackgroundImageView.autoPinEdge(toSuperviewEdge: .top)
-                            self.teamBackgroundImageView.autoPinEdge(toSuperviewEdge: .bottom)
-                            self.teamBackgroundImageView.autoSetDimension(.width, toSize: 280)
-                            self.teamBackgroundImageView.clipsToBounds = true
+//                            self.teamBackgroundImageView.autoPinEdgesToSuperviewEdges()
+//                            self.teamBackgroundImageView.autoPinEdge(toSuperviewEdge: .top)
+//                            self.teamBackgroundImageView.autoPinEdge(toSuperviewEdge: .left)
+//                            self.teamBackgroundImageView.autoSetDimension(.height, toSize: 280)
+//                            self.teamBackgroundImageView.clipsToBounds = true
                             
 
                         } else {
-                            let imageView = UIImageView(image: UIImage(data: data!))
-                            self.insertSubview(imageView, at: 0)
-                            imageView.autoPinEdgesToSuperviewEdges()
-                            imageView.backgroundColor = .white
-                            imageView.contentMode = .scaleAspectFit
-                            imageView.clipsToBounds = true
+//                            let imageView = UIImageView(image: UIImage(data: data!))
+//                            self.insertSubview(imageView, at: 0)
+//                            imageView.autoPinEdgesToSuperviewEdges()
+//                            imageView.backgroundColor = .white
+//                            imageView.contentMode = .scaleAspectFit
+//                            imageView.clipsToBounds = true
 
                         }
                         

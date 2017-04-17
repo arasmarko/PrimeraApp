@@ -28,12 +28,17 @@ class HomeViewController: UIViewController {
     let disposeBag = DisposeBag()
     var homeVM: HomeViewModel!
     let tableView = UITableView()
+    var tableViewTopConstraint: NSLayoutConstraint!
+    
+    let recentSearches = UIScrollView()
     
     let cellReuseIdentifier = "TeamCell"
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionOfTeams>()
     
     let searchField = UITextField()
+    let searchIcon = UIImageView(image: UIImage(named: "Search"))
+    let divider = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +48,17 @@ class HomeViewController: UIViewController {
         tableView.estimatedRowHeight = 220.0
         tableView.separatorStyle = .none
         
+        view.backgroundColor = .white
         
         render()
         
         setupObservables()
         
-        dataSource.configureCell = {  (ds, tv, ip, team ) in//[weak self]
-            //            guard let `self` = self else {
-            //                return UITableViewCell()
-            //            }
+        dataSource.configureCell = { [weak self] (ds, tv, ip, team ) in
+            guard let `self` = self else {
+                return UITableViewCell()
+            }
+            
             let cell = tv.dequeueReusableCell(withIdentifier: self.cellReuseIdentifier, for: ip) as! TeamTableViewCell
             
             cell.selectionStyle = .none
@@ -71,14 +78,70 @@ class HomeViewController: UIViewController {
     }
     
     func render() {
+        
+        view.addSubview(searchIcon)
+        searchIcon.autoPinEdge(toSuperviewEdge: .left)
+        searchIcon.autoPinEdge(.top, to: .top, of: view, withOffset: 68)
+        searchIcon.autoSetDimension(.width, toSize: 36)
+        searchIcon.autoSetDimension(.height, toSize: 36)
+        searchIcon.contentMode = .scaleAspectFit
+        searchIcon.backgroundColor = .white
+        
+        
         view.addSubview(searchField)
-        searchField.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(64, 0, 0, 0), excludingEdge: .bottom)
+        searchField.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(64, 40, 0, 0), excludingEdge: .bottom)
         searchField.autoSetDimension(.height, toSize: 44)
         searchField.backgroundColor = .white
-                
+        
+        view.addSubview(divider)
+        divider.autoSetDimension(.height, toSize: 1)
+        divider.autoPinEdge(.left, to: .left, of: view, withOffset: 0)
+        divider.autoPinEdge(.right, to: .right, of: view, withOffset: 0)
+        divider.autoPinEdge(.top, to: .bottom, of: searchField, withOffset: 0)
+        divider.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.1)
+        
+        renderRecentSearches()
+        
         view.addSubview(tableView)
         tableView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(), excludingEdge: .top)
-        tableView.autoPinEdge(.top, to: .bottom, of: searchField)
+        tableViewTopConstraint = tableView.autoPinEdge(.top, to: .bottom, of: divider)
+        
+        recentSearches.autoPinEdge(.bottom, to: .top, of: tableView)
+        
+    }
+    
+    func renderRecentSearches() {
+        let container = UIView()
+        
+        view.addSubview(recentSearches)
+        recentSearches.autoPinEdge(.left, to: .left, of: view)
+        recentSearches.autoPinEdge(.right, to: .right, of: view)
+        recentSearches.autoPinEdge(.top, to: .bottom, of: divider)
+        
+        
+        recentSearches.addSubview(container)
+        container.autoPinEdgesToSuperviewEdges()
+        
+        let recent1 = UIButton()
+        recent1.setTitle("blabla", for: .normal)
+        let recent2 = UIButton()
+        recent2.setTitle("blabla2", for: .normal)
+        
+        container.addSubview(recent1)
+        recent1.autoPinEdge(.top, to: .top, of: container, withOffset: 10)
+        recent1.autoPinEdge(.left, to: .left, of: container, withOffset: 0)
+        recent1.autoPinEdge(.right, to: .right, of: container, withOffset: 0)
+        recent1.autoSetDimension(.height, toSize: 44)
+        recent1.setTitleColor(.black, for: .normal)
+        
+        container.addSubview(recent2)
+        recent2.autoPinEdge(.top, to: .bottom, of: recent1, withOffset: 10)
+        recent2.autoPinEdge(.left, to: .left, of: container, withOffset: 0)
+        recent2.autoPinEdge(.right, to: .right, of: container, withOffset: 0)
+        recent2.autoSetDimension(.height, toSize: 44)
+        recent2.setTitleColor(.black, for: .normal)
+        
+        recent2.autoPinEdge(.bottom, to: .bottom, of: container, withOffset: 0)
         
     }
     
@@ -102,7 +165,20 @@ class HomeViewController: UIViewController {
             })
             .bindTo(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        searchField.rx.value.asObservable().subscribe(onNext: { _ in
+            
+        }).addDisposableTo(disposeBag)
+        
+        searchField.rx.controlEvent(UIControlEvents.editingDidBegin).asObservable().subscribe(onNext: { _ in
+            print("editingDidBegin")
+            self.tableViewTopConstraint.constant = 80
+        }).addDisposableTo(disposeBag)
+        
+        searchField.rx.controlEvent(UIControlEvents.editingDidEnd).asObservable().subscribe(onNext: { _ in
+            self.tableViewTopConstraint.constant = 0
+        }).addDisposableTo(disposeBag)
+
     }
-    
 }
 
