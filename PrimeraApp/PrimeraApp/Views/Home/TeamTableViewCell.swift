@@ -35,6 +35,8 @@ class TeamTableViewCell: UITableViewCell {
         self.team = team
         nameLabel.text = team.name
         
+        tag = team.id
+        
         contentView.addSubview(nameLabel)
         nameLabel.autoAlignAxis(.horizontal, toSameAxisOf: contentView)
         nameLabel.autoPinEdge(.left, to: .left, of: contentView, withOffset: 20)

@@ -67,11 +67,12 @@ class HomeViewController: UIViewController {
         }
         
         tableView.rx.itemSelected.subscribe(onNext: { indexPath in
-            print("klik:" , self.homeVM.allTeams[indexPath.row].name)
+            let cell = self.tableView.cellForRow(at: indexPath)
             
-            let teamVC = TeamViewController(team: self.homeVM.allTeams[indexPath.row])
-            
-            self.navigationController?.pushViewController(teamVC, animated: true)
+            if let selectedTeam = self.homeVM.allTeams.filter({ $0.id == cell?.tag ?? 0 }).first {
+                let teamVC = TeamViewController(team: selectedTeam)
+                self.navigationController?.pushViewController(teamVC, animated: true)
+            }
             
         }).addDisposableTo(disposeBag)
         
@@ -122,6 +123,8 @@ class HomeViewController: UIViewController {
         recentSearches.addSubview(container)
         container.autoPinEdgesToSuperviewEdges()
         
+        //get this values from CoreData
+        //============
         let recent1 = UIButton()
         recent1.setTitle("blabla", for: .normal)
         let recent2 = UIButton()
@@ -142,6 +145,11 @@ class HomeViewController: UIViewController {
         recent2.setTitleColor(.black, for: .normal)
         
         recent2.autoPinEdge(.bottom, to: .bottom, of: container, withOffset: 0)
+        //============
+        
+        //bind click on this button to change the search bar text filed input
+            //by doing this you trigger search, resulting in showing filtered results :)
+            //have fun
         
     }
     
@@ -176,6 +184,10 @@ class HomeViewController: UIViewController {
         }).addDisposableTo(disposeBag)
         
         searchField.rx.controlEvent(UIControlEvents.editingDidEnd).asObservable().subscribe(onNext: { _ in
+            //TODO [Tamara] save to CoreData
+            //value is in self.searchField.text
+            //append this to recentSearches scrollView container
+            
             self.tableViewTopConstraint.constant = 0
         }).addDisposableTo(disposeBag)
 

@@ -10,6 +10,7 @@
 		25F8EC75AD9E0969C02CA9AC /* Pods_PrimeraAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0E7E11BB0A2E768AB925A4 /* Pods_PrimeraAppTests.framework */; };
 		838C0545D474A48CA234E15C /* Pods_PrimeraAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC61DE1385E896CEACBC4E9 /* Pods_PrimeraAppUITests.framework */; };
 		B00F7C323FAC8566A1F3505A /* Pods_PrimeraApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02D56D5F814FAA9800DBE88 /* Pods_PrimeraApp.framework */; };
+		FB01CEBE1EA5F892005F44C9 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB01CEBD1EA5F892005F44C9 /* PlayerTableViewCell.swift */; };
 		FB1C3EFE1EA4EB960022153A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C3EFD1EA4EB960022153A /* TabBarViewController.swift */; };
 		FB1C3F011EA4EC610022153A /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C3F001EA4EC610022153A /* StandingsViewController.swift */; };
 		FB1C3F031EA4EF360022153A /* PrimeraProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C3F021EA4EF360022153A /* PrimeraProvider.swift */; };
@@ -64,6 +65,7 @@
 		BC2E800F3C9D31F44CB8C741 /* Pods-PrimeraApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeraApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimeraApp/Pods-PrimeraApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C02D56D5F814FAA9800DBE88 /* Pods_PrimeraApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC61DE1385E896CEACBC4E9 /* Pods_PrimeraAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB01CEBD1EA5F892005F44C9 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		FB1C3EFD1EA4EB960022153A /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FB1C3F001EA4EC610022153A /* StandingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		FB1C3F021EA4EF360022153A /* PrimeraProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeraProvider.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				FBCE61F61E9CE22000A1149B /* TeamViewController.swift */,
+				FB01CEBD1EA5F892005F44C9 /* PlayerTableViewCell.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				FB3C718C1E82EEB100993E87 /* PrimeraApp.xcdatamodeld in Sources */,
 				FBA1567F1E9CE7F3001E634F /* Player.swift in Sources */,
 				FBCE61F91E9CE25A00A1149B /* TeamViewModel.swift in Sources */,
+				FB01CEBE1EA5F892005F44C9 /* PlayerTableViewCell.swift in Sources */,
 				FB1C3F051EA4F2B00022153A /* StandingsViewModel.swift in Sources */,
 				FB68FFBA1E8335EF0031DA3B /* Team.swift in Sources */,
 				FB3C71861E82EEB100993E87 /* HomeViewController.swift in Sources */,

@@ -33,6 +33,7 @@ import SwiftyJSON
 //}
 
 class Team {
+    let id: Int
     let name: String
     let shortName: String
     let crestUrl: String
@@ -42,6 +43,7 @@ class Team {
     let playersLink: String
     
     init(json: JSON) {
+        self.id = Int(json["_links"]["self"]["href"].stringValue.components(separatedBy: "/teams/")[1]) ?? 0
         self.name = json["name"].stringValue
         self.shortName = json["shortName"].stringValue
         self.crestUrl = json["crestUrl"].stringValue
