@@ -12,13 +12,14 @@ class TabBarViewController: UITabBarController {
     
     let homeVC = UINavigationController(rootViewController: HomeViewController())
     let standingsVC = UINavigationController(rootViewController: StandingsViewController())
+    let fixturesVC = UINavigationController(rootViewController: FixturesViewController())
     
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let viewControllers:[UIViewController] = [homeVC, standingsVC]
+        let viewControllers:[UIViewController] = [homeVC, standingsVC, fixturesVC]
 
         //set view controllers for tabbar
         self.setViewControllers(viewControllers, animated: false)
@@ -37,7 +38,14 @@ class TabBarViewController: UITabBarController {
         secondTabBarItem.titlePositionAdjustment = UIOffsetMake(0, -4)
         secondTabBarItem.tag = 2
         standingsVC.tabBarItem = secondTabBarItem
-        
+
+        let fixturesImage = UIImage(named: "fixturesImage")?.withRenderingMode(.alwaysOriginal)
+        let fixturesSelectedImage = UIImage(named: "fixturesImageSelected")?.withRenderingMode(.alwaysOriginal)
+        let thirdTabBarItem = UITabBarItem(title: "Fixtures", image: fixturesImage, selectedImage: fixturesSelectedImage)
+        thirdTabBarItem.titlePositionAdjustment = UIOffsetMake(0, -4)
+        thirdTabBarItem.tag = 3
+        fixturesVC.tabBarItem = thirdTabBarItem
+
 
     }
 

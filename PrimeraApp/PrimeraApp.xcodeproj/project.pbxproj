@@ -41,6 +41,7 @@
 		FBE64BAA1EA61C4B008E27A1 /* TeamFixturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BA91EA61C4B008E27A1 /* TeamFixturesViewController.swift */; };
 		FBE64BAC1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BAB1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift */; };
 		FBE64BAE1EA61D91008E27A1 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BAD1EA61D91008E27A1 /* Fixture.swift */; };
+		FBF6A4421EA6560A0096DB69 /* FixtureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6A4411EA6560A0096DB69 /* FixtureTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		FBE64BA91EA61C4B008E27A1 /* TeamFixturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamFixturesViewController.swift; sourceTree = "<group>"; };
 		FBE64BAB1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamFixtureTableViewCell.swift; sourceTree = "<group>"; };
 		FBE64BAD1EA61D91008E27A1 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		FBF6A4411EA6560A0096DB69 /* FixtureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE64BA51EA61ABB008E27A1 /* FixturesViewController.swift */,
+				FBF6A4411EA6560A0096DB69 /* FixtureTableViewCell.swift */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				FB4D4E0F1EA4F94500BCE91B /* StandingTeamTableViewCell.swift in Sources */,
 				FBE64BAC1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift in Sources */,
 				FB1C3F031EA4EF360022153A /* PrimeraProvider.swift in Sources */,
+				FBF6A4421EA6560A0096DB69 /* FixtureTableViewCell.swift in Sources */,
 				FBCD0E121E846F0C0013FFAF /* TeamTableViewCell.swift in Sources */,
 				FBE64BA81EA61AD1008E27A1 /* FixturesViewModel.swift in Sources */,
 				FBE64BA61EA61ABB008E27A1 /* FixturesViewController.swift in Sources */,

@@ -18,28 +18,29 @@ class FixturesViewModel {
     
     let disposeBag = DisposeBag()
     
+    let fixtures: Observable<[Fixture]>
+    
     init() {
         
-//        standings = provider.request(.fixtures)
-//            .filterSuccessfulStatusAndRedirectCodes()
-//            .mapJSON()
-//            .flatMapLatest({ resposnse -> Observable<[StandingsTeam]> in
-//                var standingsTeams: [StandingsTeam] = []
-//                let json = JSON(resposnse)
-//                
-//                for (_, subJson) in json["standing"] {
-//                    var newTeam = StandingsTeam()
-//                    
-//                    newTeam = StandingsTeam()
-//                    newTeam.name = subJson["teamName"].stringValue
-//                    newTeam.points = subJson["points"].intValue
-//                    newTeam.position = subJson["position"].intValue
-//                    
-//
-//                    standingsTeams.append(newTeam)
-//                }
-//                return Observable.just(standingsTeams)
-//            })
+        fixtures = provider.request(.fixtures)
+            .filterSuccessfulStatusAndRedirectCodes()
+            .mapJSON()
+            .flatMapLatest({ resposnse -> Observable<[Fixture]> in
+                var fixtures: [Fixture] = []
+                let json = JSON(resposnse)
+                
+                let currentFixture = 0
+                for (_, subJson) in json["fixtures"] {
+//                    fixtures.append(Fixture(json: subJson))
+                    //sorted desc
+                    if subJson["matchday"].intValue != currentFixture {
+                        fixtures.insert(Fixture(json: subJson), at: 0)
+                    }
+                    
+                }
+                
+                return Observable.just(fixtures)
+            })
         
     }
     

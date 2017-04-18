@@ -32,9 +32,9 @@ class Fixture {
         
         self.date = dateFormatter.date(from: json["date"].stringValue)
         
-        if json["date"].stringValue == "FINISHED" {
+        if json["status"].stringValue == "FINISHED" {
             self.status = .finished
-        } else if json["date"].stringValue == "SCHEDULED" {
+        } else if json["status"].stringValue == "SCHEDULED" {
             self.status = .scheduled
         } else {
             self.status = .postponed

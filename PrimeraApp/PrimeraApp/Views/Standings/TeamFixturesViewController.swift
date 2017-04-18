@@ -13,13 +13,13 @@ import RxCocoa
 import RxDataSources
 import SVGKit
 
-struct SectionOfFixtures {
+struct SectionOfTeamFixtures {
     var items: [Fixture]
 }
 
-extension SectionOfFixtures: SectionModelType {
+extension SectionOfTeamFixtures: SectionModelType {
     
-    init(original: SectionOfFixtures, items: [Fixture]) {
+    init(original: SectionOfTeamFixtures, items: [Fixture]) {
         self = original
         self.items = items
     }

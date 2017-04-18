@@ -41,22 +41,16 @@ class StandingsViewModel {
                     var newTeam = StandingsTeam()
                     
                     newTeam = StandingsTeam()
-                    newTeam.id = Int(json["_links"]["team"]["href"].stringValue.components(separatedBy: "/teams/")[1]) ?? 0
+                    
+                    let identifier = subJson["_links"]["team"]["href"].stringValue.components(separatedBy: "/teams/")
+                    newTeam.id = Int(identifier[1]) ?? 0
+                    
+                    
                     newTeam.name = subJson["teamName"].stringValue
                     newTeam.points = subJson["points"].intValue
                     newTeam.position = subJson["position"].intValue
-                    
-//                    case position = "position"
-//                    case teamName = "teamName"
-//                    case playedGames = "playedGames"
-//                    case points = "points"
-//                    case goals = "goals"
-//                    case goalsAgainst = "goalsAgainst"
-//                    case goalDifference = "goalDifference"
-//                    case wins = "wins"
-//                    case draws = "draws"
-//                    case losses = "losses"
                     standingsTeams.append(newTeam)
+                    
                 }
                 return Observable.just(standingsTeams)
             })

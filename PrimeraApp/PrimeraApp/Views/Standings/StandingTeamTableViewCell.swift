@@ -11,7 +11,7 @@ import PureLayout
 
 class StandingTeamTableViewCell: UITableViewCell {
     let nameLabel = UILabel()
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
