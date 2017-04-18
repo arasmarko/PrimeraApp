@@ -36,6 +36,11 @@
 		FBCE61F91E9CE25A00A1149B /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCE61F81E9CE25A00A1149B /* TeamViewModel.swift */; };
 		FBDC13731E82F4BB006EA900 /* PrimeraAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC13721E82F4BB006EA900 /* PrimeraAPI.swift */; };
 		FBDC13751E82F642006EA900 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC13741E82F642006EA900 /* HomeViewModel.swift */; };
+		FBE64BA61EA61ABB008E27A1 /* FixturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BA51EA61ABB008E27A1 /* FixturesViewController.swift */; };
+		FBE64BA81EA61AD1008E27A1 /* FixturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BA71EA61AD1008E27A1 /* FixturesViewModel.swift */; };
+		FBE64BAA1EA61C4B008E27A1 /* TeamFixturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BA91EA61C4B008E27A1 /* TeamFixturesViewController.swift */; };
+		FBE64BAC1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BAB1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift */; };
+		FBE64BAE1EA61D91008E27A1 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BAD1EA61D91008E27A1 /* Fixture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +102,11 @@
 		FBCE61F81E9CE25A00A1149B /* TeamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
 		FBDC13721E82F4BB006EA900 /* PrimeraAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeraAPI.swift; sourceTree = "<group>"; };
 		FBDC13741E82F642006EA900 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FBE64BA51EA61ABB008E27A1 /* FixturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixturesViewController.swift; sourceTree = "<group>"; };
+		FBE64BA71EA61AD1008E27A1 /* FixturesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixturesViewModel.swift; sourceTree = "<group>"; };
+		FBE64BA91EA61C4B008E27A1 /* TeamFixturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamFixturesViewController.swift; sourceTree = "<group>"; };
+		FBE64BAB1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamFixtureTableViewCell.swift; sourceTree = "<group>"; };
+		FBE64BAD1EA61D91008E27A1 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +167,8 @@
 			children = (
 				FB1C3F001EA4EC610022153A /* StandingsViewController.swift */,
 				FB4D4E0E1EA4F94500BCE91B /* StandingTeamTableViewCell.swift */,
+				FBE64BA91EA61C4B008E27A1 /* TeamFixturesViewController.swift */,
+				FBE64BAB1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift */,
 			);
 			path = Standings;
 			sourceTree = "<group>";
@@ -232,6 +244,7 @@
 				FB68FFB31E832BA50031DA3B /* League.swift */,
 				FB68FFB91E8335EF0031DA3B /* Team.swift */,
 				FBA1567E1E9CE7F3001E634F /* Player.swift */,
+				FBE64BAD1EA61D91008E27A1 /* Fixture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,6 +252,7 @@
 		FB3C71B71E82F08100993E87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FBE64BA41EA61A9D008E27A1 /* Fixtures */,
 				FB1C3EFF1EA4EC350022153A /* Standings */,
 				FBCE61F51E9CE1FE00A1149B /* Team */,
 				FB3C71BE1E82F15300993E87 /* Wireframe.swift */,
@@ -254,6 +268,7 @@
 				FBDC13741E82F642006EA900 /* HomeViewModel.swift */,
 				FBCE61F81E9CE25A00A1149B /* TeamViewModel.swift */,
 				FB1C3F041EA4F2B00022153A /* StandingsViewModel.swift */,
+				FBE64BA71EA61AD1008E27A1 /* FixturesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -301,6 +316,14 @@
 				FB1C3F021EA4EF360022153A /* PrimeraProvider.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		FBE64BA41EA61A9D008E27A1 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				FBE64BA51EA61ABB008E27A1 /* FixturesViewController.swift */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +617,7 @@
 				FBDC13751E82F642006EA900 /* HomeViewModel.swift in Sources */,
 				FB1C3EFE1EA4EB960022153A /* TabBarViewController.swift in Sources */,
 				FB3C718C1E82EEB100993E87 /* PrimeraApp.xcdatamodeld in Sources */,
+				FBE64BAA1EA61C4B008E27A1 /* TeamFixturesViewController.swift in Sources */,
 				FBA1567F1E9CE7F3001E634F /* Player.swift in Sources */,
 				FBCE61F91E9CE25A00A1149B /* TeamViewModel.swift in Sources */,
 				FB01CEBE1EA5F892005F44C9 /* PlayerTableViewCell.swift in Sources */,
@@ -602,11 +626,15 @@
 				FB3C71861E82EEB100993E87 /* HomeViewController.swift in Sources */,
 				FB3C71841E82EEB100993E87 /* AppDelegate.swift in Sources */,
 				FB4D4E0F1EA4F94500BCE91B /* StandingTeamTableViewCell.swift in Sources */,
+				FBE64BAC1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift in Sources */,
 				FB1C3F031EA4EF360022153A /* PrimeraProvider.swift in Sources */,
 				FBCD0E121E846F0C0013FFAF /* TeamTableViewCell.swift in Sources */,
+				FBE64BA81EA61AD1008E27A1 /* FixturesViewModel.swift in Sources */,
+				FBE64BA61EA61ABB008E27A1 /* FixturesViewController.swift in Sources */,
 				FBCE61F71E9CE22000A1149B /* TeamViewController.swift in Sources */,
 				FBDC13731E82F4BB006EA900 /* PrimeraAPI.swift in Sources */,
 				FB1C3F011EA4EC610022153A /* StandingsViewController.swift in Sources */,
+				FBE64BAE1EA61D91008E27A1 /* Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

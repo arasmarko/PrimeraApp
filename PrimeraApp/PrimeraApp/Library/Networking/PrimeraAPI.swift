@@ -15,6 +15,7 @@ enum PrimeraAPI {
     case primera
     case teams
     case table
+    case fixtures
     case team(teamUrl: String)
     case players(playersUrl: String)
 }
@@ -35,17 +36,19 @@ extension PrimeraAPI: TargetType {
             return url
         case .players(let url):
             return url
+        case .fixtures:
+            return "/competitions/436/fixtures"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .primera, .teams, .team, .players, .table:
+        case .primera, .teams, .team, .players, .table, .fixtures:
             return .get
         }
     }
     var parameters: [String: Any]? {
         switch self {
-        case .primera, .teams, .team, .players, .table:
+        case .primera, .teams, .team, .players, .table, .fixtures:
             return nil
         }
     }
@@ -60,7 +63,7 @@ extension PrimeraAPI: TargetType {
     
     var task: Task {
         switch self {
-        case .primera, .teams, .team, .players, .table:
+        case .primera, .teams, .team, .players, .table, .fixtures:
             return .request
         }
     }

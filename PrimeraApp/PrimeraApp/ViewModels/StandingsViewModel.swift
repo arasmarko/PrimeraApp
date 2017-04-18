@@ -13,6 +13,7 @@ import Moya
 import SwiftyJSON
 
 class StandingsTeam {
+    var id: Int = 0
     var position: Int = 0
     var name: String = ""
     var points: Int = 0
@@ -40,6 +41,7 @@ class StandingsViewModel {
                     var newTeam = StandingsTeam()
                     
                     newTeam = StandingsTeam()
+                    newTeam.id = Int(json["_links"]["team"]["href"].stringValue.components(separatedBy: "/teams/")[1]) ?? 0
                     newTeam.name = subJson["teamName"].stringValue
                     newTeam.points = subJson["points"].intValue
                     newTeam.position = subJson["position"].intValue

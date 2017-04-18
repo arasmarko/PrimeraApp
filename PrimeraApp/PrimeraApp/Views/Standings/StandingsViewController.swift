@@ -51,12 +51,13 @@ class StandingsViewController: UIViewController {
         standingsTableView.estimatedRowHeight = 60.0
         standingsTableView.separatorStyle = .none
         
-        dataSource.configureCell = {  (ds, tv, ip, team ) in//[weak self]
-            //            guard let `self` = self else {
-            //                return UITableViewCell()
-            //            }
+        dataSource.configureCell = { [weak self] (ds, tv, ip, team ) in
+            guard let `self` = self else {
+                return UITableViewCell()
+            }
             let cell = tv.dequeueReusableCell(withIdentifier: self.cellReuseIdentifier, for: ip) as! StandingTeamTableViewCell
             
+            cell.tag = team.id
             cell.selectionStyle = .none
             cell.setupView(team: team)
             return cell
