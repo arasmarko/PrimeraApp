@@ -62,7 +62,7 @@ class TeamViewController: UIViewController {
         
         self.view.addSubview(playersTableView)
         playersTableView.autoPinEdgesToSuperviewEdges()
-        
+//
         playersTableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         playersTableView.rowHeight = 60.0
         playersTableView.estimatedRowHeight = 60.0
@@ -79,19 +79,19 @@ class TeamViewController: UIViewController {
             return cell
         }
         
-        playersTableView.rx.itemSelected.subscribe(onNext: { indexPath in
-            print("klik:")
-        }).addDisposableTo(disposeBag)
+//        playersTableView.rx.itemSelected.subscribe(onNext: { indexPath in
+//            print("klik:")
+//        }).addDisposableTo(disposeBag)
         
         
     }
     
     func setupObservables() {
         
-        teamVM.players.asObservable().subscribe(onNext: { players in
-            print("players", players.map({ $0.name }))
-        }).addDisposableTo(disposeBag)
-        
+//        teamVM.players.asObservable().subscribe(onNext: { players in
+//            print("players", players.map({ $0.name }))
+//        }).addDisposableTo(disposeBag)
+//
         teamVM.players.asObservable()
             .observeOn(MainScheduler.instance)
             .map({ players in

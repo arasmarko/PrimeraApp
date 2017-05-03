@@ -48,7 +48,7 @@ class TeamTableViewCell: UITableViewCell {
             let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 if data != nil {
                     DispatchQueue.main.async(execute: { () -> Void in
-                        if let im = SVGKImage(data: data) {
+//                        if let im = SVGKImage(data: data) {
 //                            self.teamBackgroundImageView = SVGKLayeredImageView(svgkImage: im)
                             
 //                            contentView.addSubview(self.teamBackgroundImageView)
@@ -61,7 +61,7 @@ class TeamTableViewCell: UITableViewCell {
 //                            self.teamBackgroundImageView.clipsToBounds = true
                             
 
-                        } else {
+//                        } else {
 //                            let imageView = UIImageView(image: UIImage(data: data!))
 //                            self.insertSubview(imageView, at: 0)
 //                            imageView.autoPinEdgesToSuperviewEdges()
@@ -69,7 +69,7 @@ class TeamTableViewCell: UITableViewCell {
 //                            imageView.contentMode = .scaleAspectFit
 //                            imageView.clipsToBounds = true
 
-                        }
+//                        }
                         
                     })
                 }

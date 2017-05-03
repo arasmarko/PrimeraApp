@@ -26,7 +26,7 @@ class TeamViewModel {
             .filterSuccessfulStatusAndRedirectCodes()
             .mapJSON()
             .flatMapLatest({ resposnse -> Observable<[Player]> in
-                
+                print("request for players")
                 let json = JSON(resposnse)
                 
                 var players: [Player] = []
@@ -41,6 +41,14 @@ class TeamViewModel {
 
                 
                 return Observable.just(players)
+            }).catchError({ err in
+                if let e = err as? MoyaError {
+                    print("Error1 ", e.failureReason, e.helpAnchor, e.recoverySuggestion)
+                } else {
+                    print("Error ", err.localizedDescription)
+                }
+                
+                return Observable.just([])
             })
     }
     

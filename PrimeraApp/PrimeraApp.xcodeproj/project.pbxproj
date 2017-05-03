@@ -259,9 +259,9 @@
 				FBE64BA41EA61A9D008E27A1 /* Fixtures */,
 				FB1C3EFF1EA4EC350022153A /* Standings */,
 				FBCE61F51E9CE1FE00A1149B /* Team */,
-				FB3C71BE1E82F15300993E87 /* Wireframe.swift */,
 				FBCD0E141E846F130013FFAF /* Home */,
 				FB1C3EFD1EA4EB960022153A /* TabBarViewController.swift */,
+				FB3C71BE1E82F15300993E87 /* Wireframe.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
