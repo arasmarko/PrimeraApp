@@ -15,10 +15,6 @@ target 'PrimeraApp' do
     pod 'SwiftyJSON'
     pod 'SwiftDate', '~> 4.0'
     
-    pod 'FacebookCore'
-    pod 'FacebookLogin'
-    pod 'FacebookShare'
-    
     pod 'RxDataSources', '~> 1.0'
     pod 'ActionSheetPicker-3.0', '~> 2.2.0'
     pod 'RxKeyboard', '~> 0.4'

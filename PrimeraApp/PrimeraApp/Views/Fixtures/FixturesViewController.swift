@@ -75,12 +75,17 @@ class FixturesViewController: UIViewController {
             .map({ fixtures in
                 var sections: [SectionOfFixtures] = []
                 
+                var lastPlayedFixture: Fixture?
+                
                 if fixtures.count > 0 {
-                    //                    sections.append(SectionOfFixtures.init(header: "marko", items: fixtures))
                     var fixturesForCurrentMatchday: [Fixture] = []
                     var currentMatchday = 1
                     
                     for (index, fixture) in fixtures.enumerated() {
+                        
+                        if fixture.status == FixtureState.finished  {
+                            lastPlayedFixture = fixture
+                        }
                         
                         if (currentMatchday == fixture.matchday && index+1 != fixtures.count) {
                             print("marko: ", currentMatchday)
@@ -94,17 +99,19 @@ class FixturesViewController: UIViewController {
                             fixturesForCurrentMatchday.append(fixture)
                             currentMatchday = fixture.matchday ?? 0
                             
-                            
-                            
                         }
                         
                     }
                     
                 }
+                
+                //                self.fixturesTableView.scrollToRow(at: IndexPath.init(row: 1, section: lastPlayedFixture?.matchday ?? 0), at: UITableViewScrollPosition.top, animated: true)
+                
                 return sections
             })
             .bindTo(fixturesTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
         
     }
     
