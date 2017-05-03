@@ -12,6 +12,8 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import SVGKit
+import CoreData
+import RxKeyboard
 
 struct SectionOfTeams {
     var items: [Team]
@@ -24,7 +26,7 @@ extension SectionOfTeams: SectionModelType {
     }
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, NSFetchedResultsControllerDelegate {
     let disposeBag = DisposeBag()
     var homeVM: HomeViewModel!
     let tableView = UITableView()
@@ -40,6 +42,8 @@ class HomeViewController: UIViewController {
     let searchIcon = UIImageView(image: UIImage(named: "Search"))
     let divider = UIView()
     
+    var fetchedResultsController: NSFetchedResultsController<Query>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeVM = HomeViewModel(searchFieldDriver: searchField.rx.text.orEmpty.asDriver())//searchFieldDriver: searchField.rx.text.orEmpty.asDriver()
@@ -53,6 +57,8 @@ class HomeViewController: UIViewController {
         render()
         
         setupObservables()
+        
+        loadFromCD()
         
         dataSource.configureCell = { [weak self] (ds, tv, ip, team ) in
             guard let `self` = self else {
@@ -70,6 +76,7 @@ class HomeViewController: UIViewController {
             let cell = self.tableView.cellForRow(at: indexPath)
             
             if let selectedTeam = self.homeVM.allTeams.filter({ $0.id == cell?.tag ?? 0 }).first {
+                self.searchField.endEditing(true)
                 let teamVC = TeamViewController(team: selectedTeam)
                 self.navigationController?.pushViewController(teamVC, animated: true)
             }
@@ -101,7 +108,13 @@ class HomeViewController: UIViewController {
         divider.autoPinEdge(.top, to: .bottom, of: searchField, withOffset: 0)
         divider.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.1)
         
-        renderRecentSearches()
+        renderRecentSearches(terms: [])
+        
+        view.addSubview(recentSearches)
+        recentSearches.autoPinEdge(.left, to: .left, of: view)
+        recentSearches.autoPinEdge(.right, to: .right, of: view)
+        recentSearches.autoPinEdge(.top, to: .bottom, of: divider)
+
         
         view.addSubview(tableView)
         tableView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(), excludingEdge: .top)
@@ -111,46 +124,54 @@ class HomeViewController: UIViewController {
         
     }
     
-    func renderRecentSearches() {
+    func renderRecentSearches(terms:[Any]) {
+        recentSearches.subviews.forEach({ $0.removeFromSuperview() })
         let container = UIView()
         
-        view.addSubview(recentSearches)
-        recentSearches.autoPinEdge(.left, to: .left, of: view)
-        recentSearches.autoPinEdge(.right, to: .right, of: view)
-        recentSearches.autoPinEdge(.top, to: .bottom, of: divider)
-        
-        
         recentSearches.addSubview(container)
-        container.autoPinEdgesToSuperviewEdges()
+        container.autoSetDimension(.width, toSize: view.bounds.width)
+        container.autoPinEdge(toSuperviewEdge: .top)
+        container.autoPinEdge(toSuperviewEdge: .bottom)
         
-        //get this values from CoreData
-        //============
-        let recent1 = UIButton()
-        recent1.setTitle("blabla", for: .normal)
-        let recent2 = UIButton()
-        recent2.setTitle("blabla2", for: .normal)
+        for (index, _) in terms.enumerated() {
+            let tmpRecent = UIButton()
+            
+            if let query = fetchedResultsController?.object(at: IndexPath(row: index, section: 0)) {
+                tmpRecent.setTitle(query.term ?? "test123", for: .normal)
+                
+                container.addSubview(tmpRecent)
+                container.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.05)
+                
+                tmpRecent.autoPinEdge(.left, to: .left, of: container, withOffset: 0)
+                tmpRecent.autoPinEdge(.right, to: .right, of: container, withOffset: 0)
+                tmpRecent.autoSetDimension(.height, toSize: 44)
+                tmpRecent.tag = index
+                
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didSelect(_:)))
+                tmpRecent.addGestureRecognizer(tapGesture)
+                
+                if index == 0 {
+                    tmpRecent.autoPinEdge(.top, to: .top, of: container, withOffset: 10)
+                } else if ( index != terms.count - 1) {
+                    tmpRecent.autoPinEdge(.top, to: .top, of: container, withOffset: CGFloat(10 + 44*index) )
+                } else if ( index == terms.count - 1) {
+                    tmpRecent.autoPinEdge(.top, to: .top, of: container, withOffset: CGFloat(10 + 44*index) )
+                    tmpRecent.autoPinEdge(.bottom, to: .bottom, of: container, withOffset: 10)
+                }
+                
+            }
+            
+            tmpRecent.setTitleColor(.black, for: .normal)
+            
+        }
         
-        container.addSubview(recent1)
-        recent1.autoPinEdge(.top, to: .top, of: container, withOffset: 10)
-        recent1.autoPinEdge(.left, to: .left, of: container, withOffset: 0)
-        recent1.autoPinEdge(.right, to: .right, of: container, withOffset: 0)
-        recent1.autoSetDimension(.height, toSize: 44)
-        recent1.setTitleColor(.black, for: .normal)
-        
-        container.addSubview(recent2)
-        recent2.autoPinEdge(.top, to: .bottom, of: recent1, withOffset: 10)
-        recent2.autoPinEdge(.left, to: .left, of: container, withOffset: 0)
-        recent2.autoPinEdge(.right, to: .right, of: container, withOffset: 0)
-        recent2.autoSetDimension(.height, toSize: 44)
-        recent2.setTitleColor(.black, for: .normal)
-        
-        recent2.autoPinEdge(.bottom, to: .bottom, of: container, withOffset: 0)
-        //============
-        
-        //bind click on this button to change the search bar text filed input
-            //by doing this you trigger search, resulting in showing filtered results :)
-            //have fun
-        
+    }
+    
+    func didSelect(_ tap: UITapGestureRecognizer) {
+        if let query = fetchedResultsController?.object(at: IndexPath(row: tap.view!.tag, section: 0)) {
+            searchField.text = query.term
+            homeVM.simulateFilterTeams(term: query.term ?? "")
+        }
     }
     
     func setupObservables() {
@@ -166,8 +187,6 @@ class HomeViewController: UIViewController {
                 var sections: [SectionOfTeams] = []
                 if teams.count > 0 {
                     sections.append(SectionOfTeams.init(items: teams))
-                } else {
-                    //                    sections.append()
                 }
                 return sections
             })
@@ -179,18 +198,35 @@ class HomeViewController: UIViewController {
         }).addDisposableTo(disposeBag)
         
         searchField.rx.controlEvent(UIControlEvents.editingDidBegin).asObservable().subscribe(onNext: { _ in
-            print("editingDidBegin")
-            self.tableViewTopConstraint.constant = 80
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.tableViewTopConstraint.constant = 80
+                self.view.layoutIfNeeded()
+            })
+            
         }).addDisposableTo(disposeBag)
         
         searchField.rx.controlEvent(UIControlEvents.editingDidEnd).asObservable().subscribe(onNext: { _ in
-            //TODO [Tamara] save to CoreData
-            //value is in self.searchField.text
-            //append this to recentSearches scrollView container
+            if let t = self.searchField.text, (self.searchField.text?.characters.count)! > 3 {
+                self.save(q: t)
+            }
             
-            self.tableViewTopConstraint.constant = 0
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.tableViewTopConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            })
+            
         }).addDisposableTo(disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { keyboardVisibleHeight in
+                self.tableView.contentInset.bottom = keyboardVisibleHeight
+            })
+            .addDisposableTo(disposeBag)
 
+        
     }
+    
 }
 

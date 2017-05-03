@@ -41,6 +41,7 @@
 		FBE64BAA1EA61C4B008E27A1 /* TeamFixturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BA91EA61C4B008E27A1 /* TeamFixturesViewController.swift */; };
 		FBE64BAC1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BAB1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift */; };
 		FBE64BAE1EA61D91008E27A1 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE64BAD1EA61D91008E27A1 /* Fixture.swift */; };
+		FBE7ECC31EBA0ADC00DFD0B1 /* HomeViewController+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7ECC21EBA0ADC00DFD0B1 /* HomeViewController+CD.swift */; };
 		FBF6A4421EA6560A0096DB69 /* FixtureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6A4411EA6560A0096DB69 /* FixtureTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		FBE64BA91EA61C4B008E27A1 /* TeamFixturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamFixturesViewController.swift; sourceTree = "<group>"; };
 		FBE64BAB1EA61CB7008E27A1 /* TeamFixtureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamFixtureTableViewCell.swift; sourceTree = "<group>"; };
 		FBE64BAD1EA61D91008E27A1 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		FBE7ECC21EBA0ADC00DFD0B1 /* HomeViewController+CD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CD.swift"; sourceTree = "<group>"; };
 		FBF6A4411EA6560A0096DB69 /* FixtureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				FB3C71851E82EEB100993E87 /* HomeViewController.swift */,
+				FBE7ECC21EBA0ADC00DFD0B1 /* HomeViewController+CD.swift */,
 				FBCD0E101E846F0C0013FFAF /* TeamTableViewCell.swift */,
 				FBCD0E111E846F0C0013FFAF /* TeamTableViewCell.xib */,
 			);
@@ -620,6 +623,7 @@
 				FBDC13751E82F642006EA900 /* HomeViewModel.swift in Sources */,
 				FB1C3EFE1EA4EB960022153A /* TabBarViewController.swift in Sources */,
 				FB3C718C1E82EEB100993E87 /* PrimeraApp.xcdatamodeld in Sources */,
+				FBE7ECC31EBA0ADC00DFD0B1 /* HomeViewController+CD.swift in Sources */,
 				FBE64BAA1EA61C4B008E27A1 /* TeamFixturesViewController.swift in Sources */,
 				FBA1567F1E9CE7F3001E634F /* Player.swift in Sources */,
 				FBCE61F91E9CE25A00A1149B /* TeamViewModel.swift in Sources */,

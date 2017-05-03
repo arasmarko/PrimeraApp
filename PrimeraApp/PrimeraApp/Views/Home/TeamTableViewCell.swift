@@ -40,6 +40,8 @@ class TeamTableViewCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         nameLabel.autoAlignAxis(.horizontal, toSameAxisOf: contentView)
         nameLabel.autoPinEdge(.left, to: .left, of: contentView, withOffset: 20)
+        
+        contentView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.1)
 
         
         if let url = URL(string: imgUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPathAllowed)!) {

@@ -12,6 +12,7 @@ import PureLayout
 class PlayerTableViewCell: UITableViewCell {
 
     let nameLabel = UILabel()
+    let posLabel = UILabel()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,9 +26,14 @@ class PlayerTableViewCell: UITableViewCell {
     
     func setupView(player: Player) {
         self.addSubview(nameLabel)
-        nameLabel.autoPinEdgesToSuperviewEdges()
-        
+        nameLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 12)
+        nameLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
         nameLabel.text = "\(player.jerseyNumber) - \(player.name)"
+        
+        self.addSubview(posLabel)
+        posLabel.autoPinEdge(.right, to: .right, of: self, withOffset: -12)
+        posLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
+        posLabel.text = "\(player.position)"
     }
 
 

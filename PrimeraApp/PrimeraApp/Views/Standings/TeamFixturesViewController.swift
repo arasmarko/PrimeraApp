@@ -39,7 +39,7 @@ class TeamFixturesViewController: UIViewController {
 
         self.view.addSubview(teamFixturesTableView)
         teamFixturesTableView.autoPinEdgesToSuperviewEdges()
-        teamFixturesTableView.backgroundColor = .red
+//        teamFixturesTableView.backgroundColor = .red
         
         teamFixturesTableView.register(TeamFixtureTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         teamFixturesTableView.rowHeight = 60.0

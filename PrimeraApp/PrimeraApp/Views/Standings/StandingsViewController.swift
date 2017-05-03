@@ -37,14 +37,30 @@ class StandingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        standingsVM.standings.subscribe(onNext: { a in
-//            print("govno")
-//        }).addDisposableTo(disposeBag)
+        self.title = "Standings 2016/2017"
         
+        let legend = UIView()
+        self.view.addSubview(legend)
+        legend.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0), excludingEdge: .bottom)
+        legend.autoSetDimension(.height, toSize: 30)
+        legend.backgroundColor = UIColor.white
         
+        let legendName = UILabel()
+        legend.addSubview(legendName)
+        legendName.text = "Team"
+        legendName.autoAlignAxis(toSuperviewAxis: .horizontal)
+        legendName.autoPinEdge(.left, to: .left, of: legend, withOffset: 10)
+        
+        let legendPoints = UILabel()
+        legend.addSubview(legendPoints)
+        legendPoints.text = "Points"
+        legendPoints.autoAlignAxis(toSuperviewAxis: .horizontal)
+        legendPoints.autoPinEdge(.right, to: .right, of: legend, withOffset: -20)
+        
+
         self.view.addSubview(standingsTableView)
-        standingsTableView.autoPinEdgesToSuperviewEdges()
-        standingsTableView.backgroundColor = .red
+        standingsTableView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 94, left: 0, bottom: 40, right: 0))
+//        standingsTableView.backgroundColor = .red
         
         standingsTableView.register(StandingTeamTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         standingsTableView.rowHeight = 60.0

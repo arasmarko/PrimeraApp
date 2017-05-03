@@ -38,26 +38,51 @@ class HomeViewModel {
         
         searchFieldDriver.asObservable().flatMapLatest { (term) -> Observable<[Team]> in
             
-            let filteredTeams = self.allTeams.filter({ (team) -> Bool in
-                
-                if term.characters.count == 0 {
-                    return true
-                }
-                
-                if team.name.lowercased().range(of: term.lowercased()) != nil {
-                    return true
-                }
-                
-                return false
-            })
-            
-            return Observable.just(filteredTeams)
+            return self.filterTeams(term: term)
             
             }.subscribe(onNext: {teams in
-//                print("new teams:", teams)
                 self.teamsVariable.value = teams
-                
             }).addDisposableTo(disposeBag)
+        
+        
+    }
+    
+    func simulateFilterTeams(term: String) {
+        
+        let filteredTeams = self.allTeams.filter({ (team) -> Bool in
+            
+            if term.characters.count == 0 {
+                return true
+            }
+            
+            if team.name.lowercased().range(of: term.lowercased()) != nil {
+                return true
+            }
+            
+            return false
+        })
+        
+//        return Observable.just(filteredTeams)
+        
+        self.teamsVariable.value = filteredTeams
+    }
+    
+    func filterTeams(term: String) -> Observable<[Team]> {
+        
+        let filteredTeams = self.allTeams.filter({ (team) -> Bool in
+            
+            if term.characters.count == 0 {
+                return true
+            }
+            
+            if team.name.lowercased().range(of: term.lowercased()) != nil {
+                return true
+            }
+            
+            return false
+        })
+        
+        return Observable.just(filteredTeams)
         
     }
     

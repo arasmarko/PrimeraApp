@@ -42,9 +42,11 @@ class FixturesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Fixtures"
+        
         self.view.addSubview(fixturesTableView)
         fixturesTableView.autoPinEdgesToSuperviewEdges()
-        fixturesTableView.backgroundColor = .red
+//        fixturesTableView.backgroundColor = .red
         
         fixturesTableView.register(FixtureTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         fixturesTableView.rowHeight = 60.0
@@ -67,7 +69,7 @@ class FixturesViewController: UIViewController {
         }
         
         fixturesTableView.rx.itemSelected.subscribe(onNext: { indexPath in
-            print("klik:")
+//            print("klik:")
         }).addDisposableTo(disposeBag)
         
         fixturesVM.fixtures.asObservable()
@@ -88,10 +90,8 @@ class FixturesViewController: UIViewController {
                         }
                         
                         if (currentMatchday == fixture.matchday && index+1 != fixtures.count) {
-                            print("marko: ", currentMatchday)
                             fixturesForCurrentMatchday.append(fixture)
                         } else {
-                            print("marko else: ", currentMatchday)
                             if fixturesForCurrentMatchday.count > 0 {
                                 sections.append(SectionOfFixtures.init(header: "\(currentMatchday)", items: fixturesForCurrentMatchday))
                                 fixturesForCurrentMatchday = []
@@ -105,7 +105,10 @@ class FixturesViewController: UIViewController {
                     
                 }
                 
-                //                self.fixturesTableView.scrollToRow(at: IndexPath.init(row: 1, section: lastPlayedFixture?.matchday ?? 0), at: UITableViewScrollPosition.top, animated: true)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+//                    self.scrollToCurrentMatchday(lastPlayedFixture: lastPlayedFixture?.matchday ?? 0)
+//                })
+//                
                 
                 return sections
             })
@@ -115,5 +118,8 @@ class FixturesViewController: UIViewController {
         
     }
     
+//    func scrollToCurrentMatchday(lastPlayedFixture: Int) {
+//        self.fixturesTableView.scrollToRow(at: IndexPath.init(row: 1, section: lastPlayedFixture), at: UITableViewScrollPosition.top, animated: true)
+//    }
     
 }

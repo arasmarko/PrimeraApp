@@ -34,7 +34,10 @@ class TeamViewModel {
                 for (_, subJson) in json["players"] {
                     
                     players.append(Player(json: subJson))
+                    
                 }
+                
+                players = players.sorted(by: { $0.jerseyNumber < $1.jerseyNumber })
 
                 
                 return Observable.just(players)

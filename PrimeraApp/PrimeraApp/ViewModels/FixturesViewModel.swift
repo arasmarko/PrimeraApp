@@ -34,9 +34,9 @@ class FixturesViewModel {
 //                    fixtures.append(Fixture(json: subJson))
                     //sorted desc
                     if subJson["matchday"].intValue != currentFixture {
-//                        fixtures.insert(Fixture(json: subJson), at: 0)
-                        let f = Fixture(json: subJson)
-                        fixtures.append(f)
+                        fixtures.insert(Fixture(json: subJson), at: 0)
+//                        let f = Fixture(json: subJson)
+//                        fixtures.append(f)
                         
                     }
                     
